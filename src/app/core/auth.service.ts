@@ -131,7 +131,7 @@ export class AuthService {
     const data: User = {
       uid: user.uid,
       email: user.email || null,
-      displayName: user.displayName || 'nameless user',
+      displayName: user.displayName || 'Anonymous',
       photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ',
     };
     return userRef.set(data);

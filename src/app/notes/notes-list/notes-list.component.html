@@ -1,11 +1,16 @@
-<h1>Firestore Notes</h1>
-<p>This is a very basic demo of the Firestore database.</p>
+<h1>Donations</h1>
+<p>Please fill up the donation form in order to donate money.</p>
 
-<input [(ngModel)]="content" placeholder="Add your own note" class="input">
+<div class="box">
+    <input [(ngModel)]="content" placeholder="First Name" class="input" style="width:49%;">
+    <input [(ngModel)]="lname" placeholder="Last Name" class="input" style="width:49%; float:right;">
+    <input [(ngModel)]="purpose" placeholder="Purpose" class="input" style="width:75%;">
+    <input [(ngModel)]="amount" placeholder="Amount" class="input" style="width:24%; float:right;">
+</div>
 
 
 <button class="button is-success" (click)="createNote()" [disabled]="content?.length < 2 || content?.length > 200">
-  Add Note
+  Donate
 </button>
 <hr>
 <div *ngFor="let note of notes | async">
