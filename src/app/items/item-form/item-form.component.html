@@ -1,11 +1,20 @@
-<h3>New Task Form</h3>
+<h3>New Event Form</h3>
 
-<label class="label">Name: </label>
-
-<input placeholder="Item Title" class="input"
+<input placeholder="Name" class="input"
 [(ngModel)]="item.title"
-required minlength="2" maxlength="23"
+required minlength="2" maxlength="50"
 #title='ngModel' autofocus>
+
+<input placeholder="Venue" class="input"
+required minlength="2" maxlength="50">
+
+<input placeholder="Organization"  style="width: 49%;" class="input"
+required minlength="2" maxlength="23">
+
+<input placeholder="Date" style="width: 49%; float:right; " class="input" type="date"
+required minlength="2" maxlength="23">
+
+<!-- ADD MORE FIELDS AND DISPLAY DONATED MONEY AMOUNT -->
 
 <div *ngIf="title.dirty">
   <span *ngIf='title.errors; then errors else valid'>template renders here...</span>

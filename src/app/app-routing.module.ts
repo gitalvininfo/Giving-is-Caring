@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'items', component: ItemsListComponent, canActivate: [AuthGuard] },
   { path: 'notes', component: NotesListComponent,  canActivate: [AuthGuard] },
   // uploads are lazy loaded
-  { path: 'uploads', loadChildren: './uploads/shared/upload.module#UploadModule', canActivate: [AuthGuard] },
+  { path: 'uploads', loadChildren: './uploads/shared/upload.module#UploadModule' },
 ];
 
 @NgModule({
