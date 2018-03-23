@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'top-nav',
@@ -7,10 +8,16 @@ import { Component } from '@angular/core';
 })
 export class TopNavComponent {
 
+
+  constructor(public auth: AuthService) {}
+
   show = false;
 
   toggleCollapse() {
     this.show = !this.show;
   }
 
+
 }
+
+
