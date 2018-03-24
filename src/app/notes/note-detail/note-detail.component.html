@@ -1,10 +1,12 @@
+<hr>
 <div>
-  <h3>{{ note.content }}</h3>
-  <span class="button is-small is-info" (click)='addHeartToNote(note.hearts)'>
+  <h3>{{ note.purpose }}</h3>
+  <p> Donated by: <strong>{{ note.content }} {{ note.lname }}</strong> <br>  Amount donated: <strong>Php {{ note.amount }}.00</strong> </p> 
+ 
+  <button class="btn btn-info btn-sm" (click)='addHeartToNote(note.hearts)'>
     Like <i class="fa fa-thumbs-up"></i>
-  </span>
-  <span class="button is-small is-danger" (click)='deleteNote(note?.id)'>Delete
+  </button>
+  <button class="btn btn-danger btn-sm" (click)='deleteNote(note?.id)'>Delete
     <i class="fa fa-trash"></i>
-  </span>
+  </button>
   <p>This donation has been liked {{ note.hearts || 0 }} times.</p>
-</div>

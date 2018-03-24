@@ -1,11 +1,10 @@
-<h3>New Event Form</h3>
-
-<input placeholder="Name" class="input"
+<h3>Create New Event</h3>
+<input placeholder="Event Name" class="input"
 [(ngModel)]="item.title"
 required minlength="2" style="width:20%;" maxlength="50"
 #title='ngModel' autofocus>
 
-<input placeholder="Venue" class="input"
+<input placeholder="Event Venue" class="input"
 required minlength="2" maxlength="50" style="width:25%;">
 
 <input placeholder="Organization"  style="width: 30%;" class="input"
@@ -20,12 +19,8 @@ required minlength="2" maxlength="23">
   <span *ngIf='title.errors; then errors else valid'>template renders here...</span>
 </div>
 
-<button class="button is-primary" (click)='createItem()' [disabled]="!title.valid">Create</button>
+<button class="btn btn-sm btn-success" (click)='createItem()' [disabled]="!title.valid">Create</button>
 
 <ng-template #valid>
-  <p class="help is-success">Looks great!</p>
-</ng-template>
-
-<ng-template #errors>
-  <p class="help is-danger">Form contains errors!</p>
+  <p class="help is-success">Nice Event!</p>
 </ng-template>

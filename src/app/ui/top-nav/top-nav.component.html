@@ -1,35 +1,23 @@
-<nav class="nav">
-  <div class="nav-left">
-    <a class="nav-item logo" routerLink="/">
-      <strong>Giving is Caring</strong>
-    </a>
-  </div>
-
-  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-  <span class="nav-toggle" (click)="toggleCollapse()" [ngClass]="{'is-active': show}">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-
-  <!-- This "nav-menu" is hidden on mobile -->
-  <!-- Add the modifier "is-active" to display it on mobile -->
-  <div class="nav-right nav-menu" [ngClass]="{'is-active': show }">
-    <a *ngIf = "!(auth.user | async)" class="nav-item" routerLink="/login">
-      Login
-    </a>
-    <a *ngIf = "(auth.user | async)" class="nav-item" routerLink="/"   >
-      Home
-    </a>
-    <a class="nav-item" routerLink="/notes">
-      Donations
-    </a>
-    <a class="nav-item" routerLink="/items">
-      Events
-    </a>
-    <a class="nav-item" routerLink="/uploads">
-      About Us
-    </a>
-  </div>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Giving is Caring</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" style="">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a  *ngIf = "(auth.user | async)" class="nav-link" routerLink="/">Home</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/notes">Donations <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/items">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/uploads">About Us</a>
+          </li>
+        </ul>
+    </div>
+  </nav>

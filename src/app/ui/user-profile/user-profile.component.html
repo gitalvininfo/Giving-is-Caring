@@ -10,15 +10,15 @@
   <p class="card-text">Login to Donate.</p>
   <br>
   <br>
-  <button class="button" style="width:150px;" routerLink="/login">Login</button>
+  <button class="btn btn-info btn-sm" style="width:150px;" routerLink="/login">Login</button>
 </ng-template>
 
 <!-- User logged in -->
-<ng-template #authenticated>
+ <ng-template #authenticated>
   <div *ngIf="auth.user | async as user">
     <h4>Welcome, {{ user.displayName }}</h4>
     <p class="text-truncate">UID: {{ user.uid }}</p>
     <br>
-    <button class="button" style="width: 150px;" (click)="logout()">Logout</button>
+    <button class="btn btn-danger btn-sm" style="width: 150px;" (click)="logout()">Logout</button>
   </div>
 </ng-template>

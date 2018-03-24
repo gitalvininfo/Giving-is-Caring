@@ -4,15 +4,16 @@
 <div class="box">
     <input [(ngModel)]="content" placeholder="First Name" class="input" style="width:49%;">
     <input [(ngModel)]="lname" placeholder="Last Name" class="input" style="width:50%; float:right;">
-    <input [(ngModel)]="purpose" placeholder="Purpose" class="input" style="width:75%;">
     <input [(ngModel)]="amount" placeholder="Amount" class="input" style="width:24%; float:right;">
+    <input [(ngModel)]="purpose" placeholder="Purpose" class="input" style="width:75%;">
+    
 </div>
 
 
-<button class="button is-success" (click)="createNote()" [disabled]="content?.length < 2 || content?.length > 200">
+<button class="btn btn-success btn-sm" (click)="createNote()" [disabled]="content?.length < 2 || content?.length > 200">
   Donate
 </button>
-<hr>
+
 <div *ngFor="let note of notes | async">
   <note-detail [note]="note"></note-detail>
 </div>
